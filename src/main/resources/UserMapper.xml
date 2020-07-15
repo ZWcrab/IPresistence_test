@@ -1,0 +1,23 @@
+<mapper namespace="com.custom.dao.IUserDao">
+
+
+    <select id="findByOne" resultType="com.custom.pojo.User" parameterType="com.custom.pojo.User">
+        select * from user where userCode = #{userCode}
+    </select>
+    <select id="findAll" resultType="com.custom.pojo.User">
+        select * from user
+    </select>
+
+    <insert id="createUser" parameterType="com.custom.pojo.User">
+        INSERT INTO user( `userCode`, `userName`) values(#{userCode},#{userName})
+    </insert>
+
+    <update id="updateUser" parameterType="com.custom.pojo.User">
+        update user set userCode=#{userCode},userName=#{userName} where id = #{id}
+    </update>
+
+    <delete id="deleteById" parameterType="com.custom.pojo.User">
+        delete from user where id = #{id}
+    </delete>
+
+</mapper>

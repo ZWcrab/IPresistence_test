@@ -1,0 +1,7 @@
+<mapper namespace="product">
+
+    <select id ="selectList">
+        select * from user
+    </select>
+
+</mapper>
